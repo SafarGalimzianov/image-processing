@@ -26,3 +26,4 @@ if __name__ == "__main__":
         print("Передайте путь к файлу")
         sys.exit(1)
     compress_image(sys.argv[1])
+    
