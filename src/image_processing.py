@@ -1,3 +1,23 @@
+from PIL import Image
+
+class ImageProcess:
+    def __init__(self):
+        self.default_path = 'C:\Users\offic\OneDrive\Документы\Скриншот'
+
+    def compress(self, fpath, in_place: bool=True) -> None:
+        img = Image.open(fpath)
+        # need to get extension
+        ext = img.format.lower()  # lower just for robustness
+        out_path = fpath if in_place else self.default_path
+        params = {'optimize': True}
+
+        simple_exts = ['png', 'gif', 'avif', 'bmp']
+        match ext:
+            case ext if ext in simple_exts:
+                ...
+            case _:
+                ...
+
 import sys
 from PIL import Image
 
